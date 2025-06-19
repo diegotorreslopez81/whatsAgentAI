@@ -14,68 +14,82 @@ import { getGroupNames } from './utils/config.js';
 
 const GROUP_NAMES = getGroupNames();
 
-const client = new Client({
-  authStrategy: new LocalAuth(),
-  puppeteer: {
-    headless: true,
-    args: ['--no-sandbox'],
-  },
-});
+function createClient() {
+  return new Client({
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+      headless: true,
+      args: ['--no-sandbox'],
+    },
+  });
+}
 
-client.on('qr', (qr) => {
-  console.log('📱 Escanea este código QR con tu WhatsApp Web:');
-  qrcode.generate(qr, { small: true });
-});
+async function runSummarizer() {
+  const client = createClient();
 
-client.on('ready', async () => {
-  console.log('✅ WhatsApp conectado.');
-  console.log('⏳ Esperando 3 segundos para asegurar carga completa...');
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  client.on('qr', (qr) => {
+    console.log('📱 Escanea este código QR con tu WhatsApp Web:');
+    qrcode.generate(qr, { small: true });
+  });
 
-  const previousHashes = loadHashes();
-  const summaries = [];
+  client.on('ready', async () => {
+    console.log('✅ WhatsApp conectado.');
+    console.log('⏳ Esperando 3 segundos para asegurar carga completa...');
+    await new Promise(resolve => setTimeout(resolve, 3000));
 
-  try {
-    for (const groupName of GROUP_NAMES) {
-      try {
-        console.log(`📥 Procesando grupo: ${groupName}`);
+    const previousHashes = loadHashes();
+    const summaries = [];
 
-        const messages = await getRecentMessages(client, groupName, 50);
-        const currentHash = hashMessages(messages);
-        const lastHash = previousHashes[groupName];
+    try {
+      for (const groupName of GROUP_NAMES) {
+        try {
+          console.log(`📥 Procesando grupo: ${groupName}`);
 
-        if (currentHash === lastHash && ignoreRepeat) {
-          console.log(`🔁 Sin cambios en "${groupName}". Se omite.`);
-          continue;
+          const messages = await getRecentMessages(client, groupName, 50);
+          const currentHash = hashMessages(messages);
+          const lastHash = previousHashes[groupName];
+
+          if (currentHash === lastHash && ignoreRepeat) {
+            console.log(`🔁 Sin cambios en "${groupName}". Se omite.`);
+            continue;
+          }
+
+          const summary = await summarizeMessages(messages);
+          summaries.push(`📌 **${groupName}**\n${summary}`);
+          saveHash(groupName, currentHash);
+
+          await new Promise(resolve => setTimeout(resolve, 1500));
+        } catch (groupError) {
+          console.error(`❌ Grupo "${groupName}" falló:`);
+          console.error(groupError.stack || groupError.toString());
         }
-
-        const summary = await summarizeMessages(messages);
-        summaries.push(`📌 **${groupName}**\n${summary}`);
-        saveHash(groupName, currentHash);
-
-        await new Promise(resolve => setTimeout(resolve, 1500));
-      } catch (groupError) {
-        console.error(`❌ Grupo "${groupName}" falló:`);
-        console.error(groupError.stack || groupError.toString());
-        throw groupError; // Abortamos todo si falla cualquier grupo
       }
+
+      if (summaries.length > 0) {
+        const finalSummary = summaries.join('\n\n────────────────────────\n\n');
+        await sendEmail(finalSummary);
+        console.log('📧 Email enviado con resúmenes de grupos con novedades.');
+      } else {
+        console.log('🟡 No hay novedades. No se envía email.');
+      }
+
+    } catch (error) {
+      console.error('❌ Error crítico durante el procesamiento de los grupos:');
+      console.error(error.stack || error.toString());
+      console.error('🛑 Se aborta el envío de email.');
+    } finally {
+      client.destroy();
     }
+  });
 
-    if (summaries.length > 0) {
-      const finalSummary = summaries.join('\n\n────────────────────────\n\n');
-      await sendEmail(finalSummary);
-      console.log('📧 Email enviado con resúmenes de grupos con novedades.');
-    } else {
-      console.log('🟡 No hay novedades. No se envía email.');
-    }
+  client.initialize();
+}
 
-  } catch (error) {
-    console.error('❌ Error crítico durante el procesamiento de los grupos:');
-    console.error(error.stack || error.toString());
-    console.error('🛑 Se aborta el envío de email.');
-  } finally {
-    client.destroy();
-  }
-});
+// Ejecutar al iniciar
+runSummarizer();
 
-client.initialize();
+// Ejecutar cada 12h
+setInterval(() => {
+  console.log('⏱️ Nueva ejecución automática...');
+  runSummarizer();
+}, 12 * 60 * 60 * 1000); // 12h

@@ -12,8 +12,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>WhatsAgentAI</h1>
-
 
   <p>
     A WhatsApp automation bot that summarizes your group messages using ChatGPT and sends the digest via email.
@@ -46,10 +44,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 
 <h4>
-    <a href="https://github.com/diegotorreslopez81/whatsAgentAI">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/diegotorreslopez81/whatsAgentAI">Documentation</a>
-  <span> · </span>
     <a href="https://github.com/diegotorreslopez81/whatsAgentAI/issues/">Report Bug</a>
   <span> · </span>
     <a href="https://github.com/diegotorreslopez81/whatsAgentAI/issues/">Request Feature</a>
@@ -59,27 +53,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <br />
 
-
-:notebook_with_decorative_cover: Table of Contents
-	•	About the Project
-	•	Screenshots
-	•	Tech Stack
-	•	Features
-	•	Color Reference
-	•	Environment Variables
-	•	Getting Started
-	•	Prerequisites
-	•	Installation
-	•	Run Locally
-	•	Deployment
-	•	Usage
-	•	Roadmap
-	•	Contributing
-	•	Code of Conduct
-	•	FAQ
-	•	License
-	•	Contact
-	•	Acknowledgements
 
 :star2: About the Project
 
@@ -180,7 +153,7 @@ MIT License.
 
 :handshake: Contact
 
-Created by @diegotorreslopez81.
+Created by @diegotorreslopez81. | diego@infinitelabs.co
 
 :gem: Acknowledgements
 	•	whatsapp-web.js

@@ -6,304 +6,183 @@ or just open an issue with the label "enhancement".
 Don't forget to give this project a star for additional support ;)
 Maybe you can mention me or this repo in the acknowledgements too
 -->
+
+
 <div align="center">
 
+
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Awesome Readme Template</h1>
-  
+  <h1>WhatsAgentAI</h1>
+
+
   <p>
-    An awesome README template for your projects! 
+    A WhatsApp automation bot that summarizes your group messages using ChatGPT and sends the digest via email.
   </p>
-  
-  
+
+
 <!-- Badges -->
+
+
 <p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/diegotorreslopez81/whatsAgentAI" alt="contributors" />
   </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI">
+    <img src="https://img.shields.io/github/last-commit/diegotorreslopez81/whatsAgentAI" alt="last update" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI/network/members">
+    <img src="https://img.shields.io/github/forks/diegotorreslopez81/whatsAgentAI" alt="forks" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI/stargazers">
+    <img src="https://img.shields.io/github/stars/diegotorreslopez81/whatsAgentAI" alt="stars" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI/issues/">
+    <img src="https://img.shields.io/github/issues/diegotorreslopez81/whatsAgentAI" alt="open issues" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
+  <a href="https://github.com/diegotorreslopez81/whatsAgentAI/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/diegotorreslopez81/whatsAgentAI.svg" alt="license" />
   </a>
 </p>
-   
+
+
 <h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
+    <a href="https://github.com/diegotorreslopez81/whatsAgentAI">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
+    <a href="https://github.com/diegotorreslopez81/whatsAgentAI">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
+    <a href="https://github.com/diegotorreslopez81/whatsAgentAI/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
+    <a href="https://github.com/diegotorreslopez81/whatsAgentAI/issues/">Request Feature</a>
   </h4>
 </div>
 
+
 <br />
 
-<!-- Table of Contents -->
-# :notebook_with_decorative_cover: Table of Contents
 
-- [About the Project](#star2-about-the-project)
-  * [Screenshots](#camera-screenshots)
-  * [Tech Stack](#space_invader-tech-stack)
-  * [Features](#dart-features)
-  * [Color Reference](#art-color-reference)
-  * [Environment Variables](#key-environment-variables)
-- [Getting Started](#toolbox-getting-started)
-  * [Prerequisites](#bangbang-prerequisites)
-  * [Installation](#gear-installation)
-  * [Running Tests](#test_tube-running-tests)
-  * [Run Locally](#running-run-locally)
-  * [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
-- [Roadmap](#compass-roadmap)
-- [Contributing](#wave-contributing)
-  * [Code of Conduct](#scroll-code-of-conduct)
-- [FAQ](#grey_question-faq)
-- [License](#warning-license)
-- [Contact](#handshake-contact)
-- [Acknowledgements](#gem-acknowledgements)
+:notebook_with_decorative_cover: Table of Contents
+	•	About the Project
+	•	Screenshots
+	•	Tech Stack
+	•	Features
+	•	Color Reference
+	•	Environment Variables
+	•	Getting Started
+	•	Prerequisites
+	•	Installation
+	•	Run Locally
+	•	Deployment
+	•	Usage
+	•	Roadmap
+	•	Contributing
+	•	Code of Conduct
+	•	FAQ
+	•	License
+	•	Contact
+	•	Acknowledgements
 
-  
+:star2: About the Project
 
-<!-- About the Project -->
-## :star2: About the Project
+WhatsAgentAI is a WhatsApp automation script that reads the latest messages from selected WhatsApp groups or chats, summarizes them using OpenAI, and emails the digest using Resend. Ideal for staying informed without being overwhelmed by notifications.
 
+:camera: Screenshots
 
-<!-- Screenshots -->
-### :camera: Screenshots
-
-<div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+<div align="center">
+  <img src="assets/screenshot.png" alt="screenshot" />
 </div>
 
 
-<!-- TechStack -->
-### :space_invader: Tech Stack
+:space_invader: Tech Stack
 
 <details>
-  <summary>Client</summary>
+  <summary>Backend</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    <li>Node.js</li>
+    <li>whatsapp-web.js</li>
+    <li>OpenAI API</li>
+    <li>Resend API</li>
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="https://go.dev/">Golang</a></li>
-    <li><a href="https://nestjs.com/">Nest.js</a></li>
-    <li><a href="https://socket.io/">SocketIO</a></li>
-    <li><a href="https://www.prisma.io/">Prisma</a></li>    
-    <li><a href="https://www.apollographql.com/">Apollo</a></li>
-    <li><a href="https://graphql.org/">GraphQL</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
-    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
-  </ul>
-</details>
 
-<details>
-<summary>DevOps</summary>
-  <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
-  </ul>
-</details>
+:dart: Features
+	•	✅ Automatically reads latest WhatsApp group messages
+	•	🤖 Uses ChatGPT to summarize discussions
+	•	📧 Sends email digest via Resend
+	•	🔁 Avoids duplicate emails with hash comparison
+	•	⚙️ Easily configurable via environment variables
 
-<!-- Features -->
-### :dart: Features
+:key: Environment Variables
 
-- Feature 1
-- Feature 2
-- Feature 3
+Create a .env file with the following keys:
 
-<!-- Color Reference -->
-### :art: Color Reference
+OPENAI_API_KEY=your_openai_api_key
+RESEND_API_KEY=your_resend_api_key
+EMAIL_FROM=noreply@resend.dev
+EMAIL_TO=you@example.com
+IGNORE_REPEAT=false
+GROUPS=Group1,Group2,Another Chat
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+:toolbox: Getting Started
 
+:bangbang: Prerequisites
 
-<!-- Env Variables -->
-### :key: Environment Variables
+Install Node.js and npm/yarn:
 
-To run this project, you will need to add the following environment variables to your .env file
+brew install node # MacOS
 
-`API_KEY`
+:gear: Installation
 
-`ANOTHER_API_KEY`
+git clone https://github.com/diegotorreslopez81/whatsAgentAI.git
+cd whatsAgentAI
+npm install
 
-<!-- Getting Started -->
-## 	:toolbox: Getting Started
+:running: Run Locally
 
-<!-- Prerequisites -->
-### :bangbang: Prerequisites
+npm run dev
 
-This project uses Yarn as package manager
+Scan the QR code with WhatsApp Web on your phone.
 
-```bash
- npm install --global yarn
-```
+:triangular_flag_on_post: Deployment
 
-<!-- Installation -->
-### :gear: Installation
+Deploy on Railway:
+	1.	Connect your GitHub repo
+	2.	Set environment variables in Railway dashboard
+	3.	Create a Cron Job → Schedule it to run every 12h:
 
-Install my-project with npm
+node src/index.js
 
-```bash
-  yarn install my-project
-  cd my-project
-```
-   
-<!-- Running Tests -->
-### :test_tube: Running Tests
+:eyes: Usage
+	•	Edit .env to define WhatsApp groups
+	•	Start the script
+	•	Check your email inbox for summaries
 
-To run tests, run the following command
+:compass: Roadmap
+	•	Email summaries via Resend
+	•	Add group list to .env
+	•	Web UI
 
-```bash
-  yarn test test
-```
+:wave: Contributing
 
-<!-- Run Locally -->
-### :running: Run Locally
+PRs are welcome! Feel free to fork and submit changes.
 
-Clone the project
+:scroll: Code of Conduct
 
-```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
-```
+Follow GitHub’s standard Code of Conduct.
 
-Go to the project directory
+:grey_question: FAQ
+	•	Does it work with private chats? Yes.
+	•	Does it store messages? No, only hashes.
 
-```bash
-  cd my-project
-```
+:warning: License
 
-Install dependencies
+MIT License.
 
-```bash
-  yarn install
-```
+:handshake: Contact
 
-Start the server
+Created by @diegotorreslopez81.
 
-```bash
-  yarn start
-```
-
-
-<!-- Deployment -->
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
-
-```bash
-  yarn deploy
-```
-
-
-<!-- Usage -->
-## :eyes: Usage
-
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
-<!-- Roadmap -->
-## :compass: Roadmap
-
-* [x] Todo 1
-* [ ] Todo 2
-
-
-<!-- Contributing -->
-## :wave: Contributing
-
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-
-<!-- Code of Conduct -->
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
-
-<!-- FAQ -->
-## :grey_question: FAQ
-
-- Question 1
-
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
-
-
-<!-- License -->
-## :warning: License
-
-Distributed under the no License. See LICENSE.txt for more information.
-
-
-<!-- Contact -->
-## :handshake: Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
-
-
-<!-- Acknowledgments -->
-## :gem: Acknowledgements
-
-Use this section to mention useful resources and libraries that you have used in your projects.
-
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
-
+:gem: Acknowledgements
+	•	whatsapp-web.js
+	•	OpenAI API
+	•	Resend

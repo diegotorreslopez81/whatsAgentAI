@@ -30,3 +30,6 @@ Thumbs.db
 
 # 🖼️ Assets (si no quieres subirlos)
 assets/
+
+chrome/
+chromium/
